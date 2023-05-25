@@ -1,0 +1,19 @@
+syntax = "proto3";
+//option java_package = "com.yrrhelp.grpc";
+option java_package = "gen";
+
+service WeatherService{
+  rpc storm(HelloRequest) returns (stream Data){};
+  rpc wind(HelloRequest) returns (stream Data){};
+  rpc volcano(HelloRequest) returns (stream Data){};
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message Data {
+  string strength = 1;
+  string whatToDo = 2;
+  string place = 3;
+}
